@@ -435,7 +435,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1583571820}
-  - component: {fileID: 1583571819}
+  - component: {fileID: 1583571821}
   m_Layer: 0
   m_Name: Exercise Testing
   m_TagString: Untagged
@@ -443,68 +443,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1583571819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1583571818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa4e31367c95784eaf6baf54ee1f733, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  a:
-    name: Gianmarco
-    hp: 100
-    baseStats:
-      atk: 10
-      def: 5
-      res: 7
-      spd: 8
-      crt: 5
-      aim: 13
-      eva: 11
-    resistance: 2
-    weakness: 3
-    weapon:
-      name: Gianmarcone
-      dmgType: 1
-      elem: 3
-      bonusStats:
-        atk: 5
-        def: 0
-        res: 0
-        spd: 0
-        crt: 2
-        aim: 0
-        eva: 0
-  b:
-    name: Pierpaolo
-    hp: 100
-    baseStats:
-      atk: 12
-      def: 7
-      res: 5
-      spd: 7
-      crt: 6
-      aim: 11
-      eva: 15
-    resistance: 2
-    weakness: 3
-    weapon:
-      name: Pierpaolone
-      dmgType: 0
-      elem: 2
-      bonusStats:
-        atk: 8
-        def: 2
-        res: 0
-        spd: 0
-        crt: 4
-        aim: 0
-        eva: 0
 --- !u!4 &1583571820
 Transform:
   m_ObjectHideFlags: 0
@@ -520,6 +458,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1583571821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583571818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa4e31367c95784eaf6baf54ee1f733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  a:
+    name: Piero
+    hp: 100
+    baseStats:
+      atk: 5
+      def: 0
+      res: 0
+      spd: 2
+      crt: 1
+      aim: 0
+      eva: 0
+    resistance: 1
+    weakness: 3
+    weapon:
+      name: Spada
+      dmgType: 1
+      elem: 1
+      bonusStats:
+        atk: 1
+        def: 0
+        res: 0
+        spd: 0
+        crt: 5
+        aim: 0
+        eva: 0
+  b:
+    name: Tommaso
+    hp: 100
+    baseStats:
+      atk: 5
+      def: 0
+      res: 0
+      spd: 1
+      crt: 2
+      aim: 0
+      eva: 0
+    resistance: 3
+    weakness: 2
+    weapon:
+      name: Ascia
+      dmgType: 0
+      elem: 0
+      bonusStats:
+        atk: 1
+        def: 0
+        res: 0
+        spd: 0
+        crt: 5
+        aim: 0
+        eva: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

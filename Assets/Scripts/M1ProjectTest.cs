@@ -7,23 +7,6 @@ public class M1ProjectTest : MonoBehaviour
 
     void Update()
     {
-        if (!a.IsAlive() || !b.IsAlive())
-        {
-            return;
-        }
-
-        GameFormulas.CheckForDuel(a, b);
-
-        if (!a.IsAlive() || !b.IsAlive())
-        {
-            return;
-        }
-
-        GameFormulas.DuelStart(a, b);
-
-        if (!a.IsAlive() || !b.IsAlive())
-        {
-            return;
-        }
+        GameFormulas.FightCheck(a, b);
     }
 }

@@ -45,6 +45,4 @@ public class Weapon
     public ELEMENT Elem { get { return elem; } set { elem = value; } }
 
     public Stats BonusStats { get { return bonusStats; } set { bonusStats = value; } }
-
 }
-

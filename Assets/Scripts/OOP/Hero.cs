@@ -53,7 +53,10 @@ public class Hero
             Debug.LogWarning("Il valore degli HP non puo' superare i 100! Reimpostati a 100.");
             this.hp = 100;
         }
+        else
+        {
             this.hp = hp;
+        }
     }
 
     public Stats BaseStats { get { return this.baseStats; } set { this.baseStats = value; } }
