@@ -108,61 +108,48 @@ public static class GameFormulas
     {
         if (!hero.IsAlive() || !hero2.IsAlive())
         {
-            Debug.Log("Uno dei due eroi e' gia' morto!");
-            inizia = false;
+            Debug.Log("Uno o piu' eroi sono gia' morti!");
             return;
         }
     }
 
     public static void DuelStart(Hero hero, Hero hero2)
     {
-        if (hero.BaseStats.spd > hero2.BaseStats.spd)
+        if (hero.BaseStats.spd > hero2.BaseStats.spd)       //caso in cui attacca hero1
         {
             Debug.Log($"{hero.GetName()} attacca per primo, {hero2.GetName()} e' pronto a difendersi!");
             hero2.TakeDamage(CalculateDamage(hero, hero2));
 
-            if (hero2.IsAlive())
+            if (!hero2.IsAlive())   //caso in cui hero2 muore e si interrompe il codice
+            {
+                Debug.Log($"{hero2.GetName()} e' morto! {hero.GetName()} vince il duello.");
+                return; 
+            }  
+
+            else if (hero2.IsAlive())    //caso in cui attacca hero2 se sopravvie
             {
                 Debug.Log($"{hero2.GetName()} attacca {hero.GetName()} che e' pronto a difendersi!");
                 hero.TakeDamage(CalculateDamage(hero2, hero));
             }
+
         }
         else
         {
-            Debug.Log($"{hero2.GetName()} attacca per primo, {hero.GetName()} e' pronto a difendersi!");
+            Debug.Log($"{hero2.GetName()} attacca per primo, {hero.GetName()} e' pronto a difendersi!");    //caso in cui hero2 attacca
             hero.TakeDamage(CalculateDamage(hero2, hero));
 
-            if (hero.IsAlive())
+            if (!hero.IsAlive()) 
             {
-                Debug.Log($"{hero.GetName()} attacca {hero2.GetName()} che e' pronto a difendersi!");
+                Debug.Log($"{hero.GetName()} e' morto! {hero2.GetName()} vince il duello.");
+                return; 
+            }    //caso in cui hero muore e si interrompe il codice
+
+            else if (hero.IsAlive())     
+            {
+                Debug.Log($"{hero.GetName()} attacca {hero2.GetName()} che e' pronto a difendersi!");   //caso in cui hero1 attacca se sopravvive
                 hero2.TakeDamage(CalculateDamage(hero, hero2));
             }
         }
     }
-
-    public static void GetWinner(Hero hero, Hero hero2)
-    {
-        if (hero.GetHp() <= 0)
-        {
-            Debug.Log($"{hero.GetName()} e' morto! {hero2.GetName()} vince il duello.");
-            continua = false;
-            return;
-        }
-        else if (hero2.GetHp() <= 0)
-        {
-            Debug.Log($"{hero2.GetName()} e' morto! {hero.GetName()} vince il duello.");
-            continua = false;
-            return;
-        }
-        else
-        {
-            Debug.Log("I combattenti sono ancora vivi, il duello continua!");
-        }
-    }
-
-
-    public static bool inizia = true;
-    public static bool continua = true;  //bool per fermare l'Update() in determinati casi
-
 }
 

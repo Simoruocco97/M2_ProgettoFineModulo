@@ -5,26 +5,25 @@ public class M1ProjectTest : MonoBehaviour
     [SerializeField] Hero a;
     [SerializeField] Hero b;
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
-        if (!GameFormulas.inizia || !GameFormulas.continua)
+        if (!a.IsAlive() || !b.IsAlive())
         {
             return;
         }
 
         GameFormulas.CheckForDuel(a, b);
 
-        if (!GameFormulas.continua || !GameFormulas.inizia)
+        if (!a.IsAlive() || !b.IsAlive())
         {
             return;
         }
 
         GameFormulas.DuelStart(a, b);
-        GameFormulas.GetWinner(a, b);
+
+        if (!a.IsAlive() || !b.IsAlive())
+        {
+            return;
+        }
     }
 }

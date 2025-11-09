@@ -45,12 +45,12 @@ public class Hero
     {
         if (hp < 0) 
         {
-            Debug.LogWarning("Non puoi assegnare agli Hp valori negativi! Reimpostati a 0.");
+            Debug.LogWarning("Il valore degli HP non puo' scendere sotto lo 0! Reimpostati a 0.");
             this.hp = 0;
         }
         else if (hp > 100)
         {
-            Debug.LogWarning("Non puoi assegnare agli Hp valori maggiori di 100! Reimpostati a 100.");
+            Debug.LogWarning("Il valore degli HP non puo' superare i 100! Reimpostati a 100.");
             this.hp = 100;
         }
             this.hp = hp;
@@ -82,6 +82,4 @@ public class Hero
         }
         return false;
     }
-
-
 }

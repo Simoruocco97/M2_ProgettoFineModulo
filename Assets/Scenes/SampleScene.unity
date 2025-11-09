@@ -456,53 +456,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   a:
-    name: 
-    hp: 0
+    name: Gianmarco
+    hp: 100
     baseStats:
-      atk: 0
-      def: 0
-      res: 0
-      spd: 0
-      crt: 0
-      aim: 0
-      eva: 0
-    resistance: 0
-    weakness: 0
+      atk: 10
+      def: 5
+      res: 7
+      spd: 8
+      crt: 5
+      aim: 13
+      eva: 11
+    resistance: 2
+    weakness: 3
     weapon:
-      name: 
-      dmgType: 0
-      elem: 0
+      name: Gianmarcone
+      dmgType: 1
+      elem: 3
       bonusStats:
-        atk: 0
+        atk: 5
         def: 0
         res: 0
         spd: 0
-        crt: 0
+        crt: 2
         aim: 0
         eva: 0
   b:
-    name: 
-    hp: 0
+    name: Pierpaolo
+    hp: 100
     baseStats:
-      atk: 0
-      def: 0
-      res: 0
-      spd: 0
-      crt: 0
-      aim: 0
-      eva: 0
-    resistance: 0
-    weakness: 0
+      atk: 12
+      def: 7
+      res: 5
+      spd: 7
+      crt: 6
+      aim: 11
+      eva: 15
+    resistance: 2
+    weakness: 3
     weapon:
-      name: 
+      name: Pierpaolone
       dmgType: 0
-      elem: 0
+      elem: 2
       bonusStats:
-        atk: 0
-        def: 0
+        atk: 8
+        def: 2
         res: 0
         spd: 0
-        crt: 0
+        crt: 4
         aim: 0
         eva: 0
 --- !u!4 &1583571820
