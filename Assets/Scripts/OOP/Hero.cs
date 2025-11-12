@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [System.Serializable]
@@ -21,10 +22,8 @@ public class Hero
         this.weapon = weapon;
     }
 
-    public string GetName()
-    {
-        return this.name;
-    }
+    public string GetName() => this.name;
+    public int GetHp() => this.hp;
 
     public void SetName(string name)
     {
@@ -36,27 +35,9 @@ public class Hero
         this.name = name;
     }
 
-    public int GetHp()
-    {
-        return this.hp;
-    }
-
     public void SetHp(int hp)
     {
-        if (hp < 0) 
-        {
-            Debug.LogWarning("Il valore degli HP non puo' scendere sotto lo 0! Reimpostati a 0.");
-            this.hp = 0;
-        }
-        else if (hp > 100)
-        {
-            Debug.LogWarning("Il valore degli HP non puo' superare i 100! Reimpostati a 100.");
-            this.hp = 100;
-        }
-        else
-        {
-            this.hp = hp;
-        }
+        this.hp = Mathf.Clamp(hp, 0, 100);
     }
 
     public Stats BaseStats { get { return this.baseStats; } set { this.baseStats = value; } }

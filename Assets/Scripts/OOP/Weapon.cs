@@ -23,15 +23,12 @@ public class Weapon
         this.bonusStats = bonusStats;
     }
 
-    public string GetName()
-    {
-        return this.name;
-    }
+    public string GetName() => this.name;
     public void SetName(string name)
     {
         if (string.IsNullOrWhiteSpace(name))
         {
-            Debug.LogWarning("Il nome dell'arma non puo' essere vuoto. Impostata 'spada lunga' come default.");
+            Debug.LogWarning("Il nome dell'arma non puo' essere vuoto. Impostata 'spada lunga' di default.");
             this.name = "Spada Lunga";
         }
         else
