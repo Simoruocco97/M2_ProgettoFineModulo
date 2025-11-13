@@ -10,3 +10,6 @@ public class M1ProjectTest : MonoBehaviour
         GameFormulas.FightCheck(a, b);
     }
 }
+
+
+//NONE superefficace, codice si ferma da solo dopo poco

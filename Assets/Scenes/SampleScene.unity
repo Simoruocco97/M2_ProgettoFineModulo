@@ -474,21 +474,21 @@ MonoBehaviour:
     name: Piero
     hp: 100
     baseStats:
-      atk: 5
-      def: 0
-      res: 0
-      spd: 2
-      crt: 1
-      aim: 0
-      eva: 0
+      atk: 10
+      def: 2
+      res: 3
+      spd: 4
+      crt: 2
+      aim: 4
+      eva: 7
     resistance: 1
-    weakness: 3
+    weakness: 0
     weapon:
-      name: Spada
+      name: Spada Bislunga
       dmgType: 1
       elem: 1
       bonusStats:
-        atk: 1
+        atk: 2
         def: 0
         res: 0
         spd: 0
@@ -499,21 +499,21 @@ MonoBehaviour:
     name: Tommaso
     hp: 100
     baseStats:
-      atk: 5
-      def: 0
-      res: 0
+      atk: 10
+      def: 4
+      res: 5
       spd: 1
-      crt: 2
-      aim: 0
-      eva: 0
+      crt: 3
+      aim: 4
+      eva: 7
     resistance: 3
     weakness: 2
     weapon:
-      name: Ascia
+      name: Asciapappa
       dmgType: 0
       elem: 0
       bonusStats:
-        atk: 1
+        atk: 2
         def: 0
         res: 0
         spd: 0
