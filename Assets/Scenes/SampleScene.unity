@@ -471,7 +471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   a:
-    name: Piero
+    name: Andrea
     hp: 100
     baseStats:
       atk: 10
@@ -481,12 +481,12 @@ MonoBehaviour:
       crt: 2
       aim: 4
       eva: 7
-    resistance: 1
-    weakness: 0
+    resistance: 2
+    weakness: 3
     weapon:
-      name: Spada Bislunga
-      dmgType: 1
-      elem: 1
+      name: Flagello
+      dmgType: 0
+      elem: 0
       bonusStats:
         atk: 2
         def: 0
@@ -496,7 +496,7 @@ MonoBehaviour:
         aim: 0
         eva: 0
   b:
-    name: Tommaso
+    name: Franco
     hp: 100
     baseStats:
       atk: 10
@@ -506,12 +506,12 @@ MonoBehaviour:
       crt: 3
       aim: 4
       eva: 7
-    resistance: 3
-    weakness: 2
+    resistance: 0
+    weakness: 1
     weapon:
-      name: Asciapappa
-      dmgType: 0
-      elem: 0
+      name: Falce
+      dmgType: 1
+      elem: 2
       bonusStats:
         atk: 2
         def: 0

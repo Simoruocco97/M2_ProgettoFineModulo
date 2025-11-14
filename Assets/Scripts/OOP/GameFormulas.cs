@@ -5,7 +5,7 @@ public static class GameFormulas
 
     public static bool HasElementAdvantage(ELEMENT attackElement, Hero defender)
     {
-        if (attackElement == defender.Weakness)
+        if (attackElement == defender.Weakness && attackElement != ELEMENT.NONE)  //ho perso un sacco di tempo per capire perchè NONE fosse superefficace..
         {
             Debug.Log($"WEAKNESS! {defender.GetName()} e' debole a {attackElement}.");
             return true;
@@ -15,7 +15,7 @@ public static class GameFormulas
 
     public static bool HasElementDisvantage(ELEMENT attackElement, Hero defender)
     {
-        if (attackElement == defender.Resistance)
+        if (attackElement == defender.Resistance && attackElement != ELEMENT.NONE)
         {
             Debug.Log($"RESIST! {defender.GetName()} e' resistente a {attackElement}.");
             return true;
@@ -88,8 +88,8 @@ public static class GameFormulas
             damage = attackerTot.atk - defenderTot.res;
         }
 
-        if (damage < 0)  
-        {               
+        if (damage < 0)
+        {
             damage = 0;
         }
 
@@ -104,56 +104,93 @@ public static class GameFormulas
         return damage;
     }
 
-    //opzionali
+    //Funzioni per tener pulito Update()
 
     public static void FightCheck(Hero hero, Hero hero2)
     {
-        if (!hero.IsAlive() || !hero2.IsAlive())
+        while (hero.IsAlive() && hero2.IsAlive())
         {
-            return;
-        }
-        else
-        {
-            DuelStart(hero, hero2);
+            Hero[] order = SpdCheck(hero, hero2);
+            Hero first = order[0];
+            Hero second = order[1];
+
+            Attack(first, second);
+
+            if (second.IsAlive())
+            {
+                Attack(second, first);
+            }
         }
     }
 
-    public static void DuelStart(Hero hero, Hero hero2)
+    private static Hero[] SpdCheck(Hero hero, Hero hero2)
     {
-        if (hero.BaseStats.spd > hero2.BaseStats.spd)       //caso in cui attacca hero1
+        Hero first;
+        Hero second;
+
+        if (hero.BaseStats.spd >= hero2.BaseStats.spd)
         {
-            Debug.Log($"{hero.GetName()} attacca per primo, {hero2.GetName()} e' pronto a difendersi!");
-            hero2.TakeDamage(CalculateDamage(hero, hero2));
-
-            if (!hero2.IsAlive())   //caso in cui hero2 muore e si interrompe il codice
-            {
-                Debug.Log($"{hero2.GetName()} e' morto! {hero.GetName()} vince il duello.");
-                return;
-            }
-
-            else if (hero2.IsAlive())    //caso in cui attacca hero2 se sopravvie
-            {
-                Debug.Log($"{hero2.GetName()} attacca {hero.GetName()} che e' pronto a difendersi!");
-                hero.TakeDamage(CalculateDamage(hero2, hero));
-            }
-
+            first = hero;
+            second = hero2;
         }
         else
         {
-            Debug.Log($"{hero2.GetName()} attacca per primo, {hero.GetName()} e' pronto a difendersi!");    //caso in cui hero2 attacca
-            hero.TakeDamage(CalculateDamage(hero2, hero));
+            first = hero2;
+            second = hero;
+        }
+        Hero[] HeroesInOrder = new Hero[2];
+        HeroesInOrder[0] = first;
+        HeroesInOrder[1] = second;
+        return HeroesInOrder;
+    }
 
-            if (!hero.IsAlive())
-            {
-                Debug.Log($"{hero.GetName()} e' morto! {hero2.GetName()} vince il duello.");
-                return;
-            }    //caso in cui hero muore e si interrompe il codice
+    private static void Attack(Hero attacker, Hero defender)
+    {
+        Debug.Log($"{attacker.GetName()} attacca {defender.GetName()}");
+        defender.TakeDamage(CalculateDamage(attacker, defender));
 
-            else if (hero.IsAlive())
-            {
-                Debug.Log($"{hero.GetName()} attacca {hero2.GetName()} che e' pronto a difendersi!");   //caso in cui hero1 attacca se sopravvive
-                hero2.TakeDamage(CalculateDamage(hero, hero2));
-            }
+        if (!defender.IsAlive())
+        {
+            Debug.Log($"{defender.GetName()} e' morto. {attacker.GetName()} vince il duello!");
         }
     }
 }
+
+
+
+//vecchio codice, poco legibile e difficile da modificare
+
+//if (hero.BaseStats.spd > hero2.BaseStats.spd)       //caso in cui attacca hero1
+//{
+//    Debug.Log($"{hero.GetName()} attacca per primo, {hero2.GetName()} e' pronto a difendersi!");
+//    hero2.TakeDamage(CalculateDamage(hero, hero2));
+
+//    if (!hero2.IsAlive())   //caso in cui hero2 muore e si interrompe il codice
+//    {
+//        Debug.Log($"{hero2.GetName()} e' morto! {hero.GetName()} vince il duello.");
+//        return;
+//    }
+
+//    else if (hero2.IsAlive())    //caso in cui attacca hero2 se sopravvie
+//    {
+//        Debug.Log($"{hero2.GetName()} attacca {hero.GetName()} che e' pronto a difendersi!");
+//        hero.TakeDamage(CalculateDamage(hero2, hero));
+//    }
+
+//}
+//else
+//{
+//    Debug.Log($"{hero2.GetName()} attacca per primo, {hero.GetName()} e' pronto a difendersi!");    //caso in cui hero2 attacca
+//    hero.TakeDamage(CalculateDamage(hero2, hero));
+
+//    if (!hero.IsAlive())
+//    {
+//        Debug.Log($"{hero.GetName()} e' morto! {hero2.GetName()} vince il duello.");
+//        return;
+//    }    //caso in cui hero muore e si interrompe il codice
+
+//    else if (hero.IsAlive())
+//    {
+//        Debug.Log($"{hero.GetName()} attacca {hero2.GetName()} che e' pronto a difendersi!");   //caso in cui hero1 attacca se sopravvive
+//        hero2.TakeDamage(CalculateDamage(hero, hero2));
+//    }
