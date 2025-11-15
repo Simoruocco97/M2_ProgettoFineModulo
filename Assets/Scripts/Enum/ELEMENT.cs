@@ -5,3 +5,9 @@ public enum ELEMENT
     ICE,
     LIGHTNING,
 }
+
+public enum DAMAGE_TYPE
+{
+    PHYSICAL,
+    MAGICAL,
+}

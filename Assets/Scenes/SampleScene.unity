@@ -471,55 +471,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   a:
-    name: Andrea
-    hp: 100
+    name: Gianluigi detto "Gigi"
+    hp: 69
     baseStats:
-      atk: 10
-      def: 2
-      res: 3
-      spd: 4
-      crt: 2
-      aim: 4
-      eva: 7
-    resistance: 2
-    weakness: 3
+      atk: 1
+      def: 200
+      res: 33
+      spd: 14
+      crt: 90
+      aim: 1
+      eva: 63
+    resistance: 0
+    weakness: 0
     weapon:
-      name: Flagello
+      name: L'elefante Tandem Psichico da guerra
+      dmgType: 1
+      elem: 1
+      bonusStats:
+        atk: 10000
+        def: 0
+        res: 0
+        spd: 0
+        crt: 0
+        aim: -1
+        eva: 0
+  b:
+    name: Rjno.
+    hp: 96
+    baseStats:
+      atk: 1
+      def: 2
+      res: 33
+      spd: 41
+      crt: 9
+      aim: 1
+      eva: 36
+    resistance: 3
+    weakness: 0
+    weapon:
+      name: Il Gasperade
       dmgType: 0
       elem: 0
       bonusStats:
-        atk: 2
-        def: 0
-        res: 0
-        spd: 0
-        crt: 5
-        aim: 0
-        eva: 0
-  b:
-    name: Franco
-    hp: 100
-    baseStats:
-      atk: 10
-      def: 4
-      res: 5
-      spd: 1
-      crt: 3
-      aim: 4
-      eva: 7
-    resistance: 0
-    weakness: 1
-    weapon:
-      name: Falce
-      dmgType: 1
-      elem: 2
-      bonusStats:
-        atk: 2
-        def: 0
-        res: 0
-        spd: 0
-        crt: 5
-        aim: 0
-        eva: 0
+        atk: 150
+        def: 150
+        res: 150
+        spd: 150
+        crt: 150
+        aim: 150
+        eva: 150
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
